@@ -1,0 +1,17 @@
+# https://zukucode.com/2019/06/docker-compose-phpmyadmin.html
+#      PMA_HOSTS=klbcedmmqp7w17ik.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+#      PMA_USER=nsdwq8a3xcnk13b1
+#      PMA_PASSWORD=v3wmxhrle23dxx2c
+
+version: '3'
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_ARBITRARY: 1
+    ports:
+      - "3000:80"
+    volumes:
+      - ./docker/phpmyadmin/sessions:/sessions
+
+
